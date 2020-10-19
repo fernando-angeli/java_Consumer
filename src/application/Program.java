@@ -23,11 +23,7 @@ public class Program {
 		//usuário pode definir o fator de ajuste de valor.
 		double factor = 1.1;
 		
-		Consumer<Product> cons = p -> {
-			p.setPrice(p.getPrice() * factor);
-		};
-		
-		list.forEach(Product::nonStaticPriceUpdate);
+		list.forEach(p -> p.setPrice(p.getPrice() * factor));
 
 		list.forEach(System.out::println);
 		
